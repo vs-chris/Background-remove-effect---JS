@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-box">
+            <img src="images\transparent.png" width="100%">
+            <div class="image-style">
+                <img src="images\original.jpg" class="trans-image">
+            </div>
+        </div>
+    </div>
+    <script>
+        const imageBox = document.querySelector(".image-box");
+        const imageStyle = document.querySelector(".image-style");
+        const transImage = document.querySelector(".trans-image");
+
+        transImage.style.width = imageBox.offsetWidth + "px";
+
+        imageBox.addEventListener("mousemove", (e) => {
+            let whiteSpace = imageBox.offsetLeft;
+            imageStyle.style.width = e.pageX - whiteSpace + "px";
+        })
+
+
+    </script>
+</body>
+</html>
